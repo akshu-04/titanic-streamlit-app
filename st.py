@@ -27,9 +27,12 @@ elif embarked == 'Q':
 elif embarked == 'S':
     embarked = 2
 
+# Display the prediction result
+st.write(f'Predicted Survival: {"Yes" if prediction[0] == 1 else "No"}')
+
 
 # Prepare the input data
-input_data = [[pclass, sex_numeric, age, sibsp, parch, fare, embarked]]
+input_data = [[pclass, 1 if sex == 'Male' else 0, age, sibsp, parch, fare]]
 
 # Make prediction
 if st.button('Predict'):
